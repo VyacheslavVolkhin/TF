@@ -1,9 +1,10 @@
 :root {
-	--clr-base: #000;
-	--clr-att: #f00;
+	--clr-base: #20202A;
+	--clr-att: #005AF0;
+    --clr-border: #C7C7CE;
 
 	--min: 320px;
-	--max: 1200px;
+	--max: 1354px;
 
 	font-size: 10px;
 }
@@ -17,11 +18,14 @@
 			main styles
 \* ----------------------------------- */
 body {
-	color: var(--clr-base, #000);
+	color: var(--clr-base, #20202A);
 	background: #fff;
+    font-size: 13px;
+    line-height: 18/13;
 }
 p, ul, ol {
 	position: relative;
+    margin-bottom: 18/13em;
 	img {
 		max-width: 100%;
 	}
@@ -32,13 +36,26 @@ p, ul, ol {
 
 li {
 	position: relative;
+    padding: 0 0 0 14px;
+    &:before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--clr-att);
+        position: absolute;
+        top: 9px;
+        left: 0;
+        margin-top: -3px;
+    }
 }
 a {
 	text-decoration: none;
-	color: var(--clr-att, #f00);
+	color: var(--clr-att, #005AF0);
 	&:hover {
 		text-decoration: none;
-		color: var(--clr-att, #f00);
+		color: var(--clr-att, #005AF0);
 	}
 }
 a.link-main, .link-main {
@@ -48,6 +65,7 @@ a.link-main, .link-main {
 		border-bottom: none;
 	}
 }
+.page-title,
 h1, .h1-title,
 h2, .h2-title,
 h3, .h3-title,
@@ -56,7 +74,46 @@ h5, .h5-title,
 h6, .h6-title {
 	display: block;
 	position: relative;
+    font-weight: bold;
+    margin: 1em 0 1em 0;
+    font-size: 20px;
+    color: #030F09;
+    line-height: 1.16;
     &:first-child {
-        margin-top: 0;
+        margin-top: 0 !important;
+    }
+}
+.page-title {
+    font-size: 22px;
+    line-height: 1.3;
+    margin: 0 0 16px 0;
+    color: var(--clr-base);
+}
+.h1-title, h1 {
+    font-size: 20px;
+}
+.h2-title, h2 {
+    font-size: 18px;
+    line-height: 1.3;
+}
+.h3-title, h3 {
+    font-size: 16px;
+    line-height: 1.3;
+}
+.h4-title, h4 {
+    font-size: 14px;
+    line-height: 17/14;
+    font-weight: 600;
+}
+@media (min-width: 1200px) {
+    .h1-title, h1 {
+        font-size: 28px;
+    }
+    .h2-title, h2 {
+        font-size: 24px;
+    }
+    .page-title {
+        font-size: 36px;
+        margin-bottom: 18px;
     }
 }
